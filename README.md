@@ -6,8 +6,9 @@ Memos client built on electron cross-end framework to meet special usage require
 
 ## TODO
 - [] Packaged cross-platform client (now MacOS only)
-- [] Custom configuration port and path to save data
+- [] Customizing the port and path to save data
 - [] Automatic updates
+- [] Customizing the Open API Path
 
 Coming soon...
 
