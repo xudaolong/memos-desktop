@@ -4,6 +4,13 @@ Memos client built on electron cross-end framework to meet special usage require
 
 ![demo](./docs/layout.png)
 
+## TODO
+- [] Packaged cross-platform client (now MacOS only)
+- [] Custom configuration port and path to save data
+- [] Automatic updates
+
+Coming soon...
+
 ## Using people
 - Local service, data is saved in the "My Documents" directory in the computer
 - offline can be used
