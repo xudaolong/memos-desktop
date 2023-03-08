@@ -1,5 +1,5 @@
 {
-  "description": "A foundation for scalable desktop apps",
+  "description": "Memos client built on electron cross-end framework",
   "keywords": [
     "electron",
     "boilerplate",
@@ -11,27 +11,21 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/xudaolong/memos-desktop#readme",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.com/xudaolong/memos-desktop/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/xudaolong/memos-desktop.git"
   },
   "license": "MIT",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "DaoLong XU",
+    "email": "xudaolong@gmail.com",
+    "url": "https://xudaolong.com"
   },
-  "contributors": [
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
-    }
-  ],
+  "contributors": [],
   "main": "./src/main/main.ts",
   "scripts": {
     "build": "ts-node ./.erb/scripts/clean.js dist && concurrently \"npm run build:main\" \"npm run build:renderer\"",
@@ -170,8 +164,8 @@
     "webpack-merge": "^5.8.0"
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "Memos",
+    "appId": "com.xudaolong.memos-desktop",
     "asar": false,
     "asarUnpack": "**\\*.{node,dll,bin}",
     "files": [
@@ -185,7 +179,8 @@
       "target": {
         "target": "default",
         "arch": [
-          "arm64"
+          "arm64",
+          "x64"
         ]
       },
       "type": "distribution",
@@ -229,12 +224,12 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "xudaolong",
+      "repo": "memos-desktop"
     }
   },
   "collective": {
-    "url": "https://opencollective.com/electron-react-boilerplate-594"
+    "url": ""
   },
   "devEngines": {
     "node": ">=14.x",
