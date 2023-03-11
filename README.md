@@ -24,3 +24,9 @@ Coming soon...
 - Markdown support
 - Customizable and sharable
 - RESTful API for self-service
+
+## Build windows env
+
+- [Install GCC](https://jmeubank.github.io/tdm-gcc/articles/2021-05/10.3.0-release)
+- CGO_ENABLED=1 go install github.com/mattn/go-sqlite3
+- make w-build

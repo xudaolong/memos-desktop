@@ -6,10 +6,14 @@ import { join } from 'path';
 class Memos {
   constructor() {}
 
+  getBinName () {
+    return process.platform === 'win32' ? 'memos.exe' : 'memos';
+  }
+
   getMemosBin() {
     return process.env.NODE_ENV === 'development'
-      ? join(process.cwd(), '/release/app/bin/memos')
-      : join(process.resourcesPath, '/app/bin/memos');
+      ? join(process.cwd(), `/release/app/bin/${this.getBinName()}`)
+      : join(process.resourcesPath, `/app/bin/${this.getBinName()}`);
   }
 
   // 保存到我的文档中
