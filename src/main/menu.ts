@@ -80,9 +80,7 @@ export default class MenuBuilder {
         { type: 'separator' },
         {
           label: 'Connect Another Memos Server',
-          // pop a input box to receive the server address
           click: () => {
-            // open a text dialog
             const serverAddress =
               store.get('serverAddress') || 'http://localhost:8081';
             prompt({
