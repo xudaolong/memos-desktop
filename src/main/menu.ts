@@ -5,6 +5,11 @@ import {
   BrowserWindow,
   MenuItemConstructorOptions,
 } from 'electron';
+import prompt from 'electron-prompt';
+
+import Store from 'electron-store';
+
+const store = new Store();
 
 interface DarwinMenuItemConstructorOptions extends MenuItemConstructorOptions {
   selector?: string;
@@ -27,9 +32,7 @@ export default class MenuBuilder {
     }
 
     const template =
-      process.platform === 'darwin'
-        ? this.buildDarwinTemplate()
-        : [];
+      process.platform === 'darwin' ? this.buildDarwinTemplate() : [];
 
     const menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
@@ -75,6 +78,34 @@ export default class MenuBuilder {
         },
         { label: 'Show All', selector: 'unhideAllApplications:' },
         { type: 'separator' },
+        {
+          label: 'Connect Another Memos Server',
+          // pop a input box to receive the server address
+          click: () => {
+            // open a text dialog
+            const serverAddress =
+              store.get('serverAddress') || 'http://localhost:8081';
+            prompt({
+              title: 'Your Memos Server Address',
+              label: 'URL:',
+              value: serverAddress,
+              inputAttrs: {
+                type: 'url',
+              },
+              type: 'input',
+            })
+              .then((r: string | null) => {
+                if (r === null) {
+                  console.log('user cancelled');
+                } else {
+                  store.set('serverAddress', r);
+                  this.mainWindow.loadURL(r);
+                }
+                return r;
+              })
+              .catch(console.error);
+          },
+        },
         {
           label: 'Quit',
           accelerator: 'Command+Q',
