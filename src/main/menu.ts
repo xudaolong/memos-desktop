@@ -6,7 +6,6 @@ import {
   MenuItemConstructorOptions,
 } from 'electron';
 import prompt from 'electron-prompt';
-
 import Store from 'electron-store';
 
 const store = new Store();
